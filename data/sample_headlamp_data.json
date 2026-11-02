@@ -1,0 +1,286 @@
+{
+  "product_summary": {
+    "material_number": "HL-200X",
+    "description": "Bi-LED Automotive Headlamp Assembly (RH) - High/Low Beam",
+    "material_type": "FERT",
+    "industry_sector": "M",
+    "base_unit_of_measure": "EA",
+    "plant": "1010",
+    "storage_location": "101A",
+    "mrp_type": "PD",
+    "mrp_controller": "P01",
+    "procurement_type": "E",
+    "production_scheduling_profile": "PP0001",
+    "valuation_class": "7920",
+    "price_control": "S",
+    "standard_price_inr": 4850.00
+  },
+  "bill_of_materials": {
+    "bom_number": "00084521",
+    "bom_usage": "1",
+    "plant": "1010",
+    "base_quantity": 1,
+    "base_uom": "EA",
+    "valid_from": "2026-01-01",
+    "status": "01",
+    "items": [
+      {
+        "item_number": "0010",
+        "material_number": "HL-HOU-101",
+        "description": "Composite Headlamp Housing Sub-Assembly",
+        "material_type": "HALB",
+        "quantity": 1.0,
+        "uom": "EA",
+        "item_category": "L",
+        "component_scrap_pct": 1.5,
+        "backflush": true,
+        "storage_location": "101B"
+      },
+      {
+        "item_number": "0020",
+        "material_number": "HL-LENS-201",
+        "description": "Projector Optical Lens Module (Anti-Fog Coated PC)",
+        "material_type": "HALB",
+        "quantity": 1.0,
+        "uom": "EA",
+        "item_category": "L",
+        "component_scrap_pct": 2.0,
+        "backflush": true,
+        "storage_location": "101B"
+      },
+      {
+        "item_number": "0030",
+        "material_number": "HL-PCB-301",
+        "description": "Bi-LED Driver & Die-Cast Heat Sink Module",
+        "material_type": "HALB",
+        "quantity": 1.0,
+        "uom": "EA",
+        "item_category": "L",
+        "component_scrap_pct": 0.5,
+        "backflush": false,
+        "storage_location": "101B"
+      },
+      {
+        "item_number": "0040",
+        "material_number": "HL-HAR-401",
+        "description": "Waterproof 6-Pin Sealed Wiring Harness",
+        "material_type": "ROH",
+        "quantity": 1.0,
+        "uom": "EA",
+        "item_category": "L",
+        "component_scrap_pct": 0.5,
+        "backflush": true,
+        "storage_location": "101B"
+      },
+      {
+        "item_number": "0050",
+        "material_number": "HL-ADH-501",
+        "description": "Automotive 2K Polyurethane Structural Adhesive Sealant",
+        "material_type": "ROH",
+        "quantity": 0.045,
+        "uom": "KG",
+        "item_category": "L",
+        "component_scrap_pct": 3.0,
+        "backflush": true,
+        "storage_location": "101C"
+      },
+      {
+        "item_number": "0060",
+        "material_number": "HL-GSK-601",
+        "description": "EPDM Perimeter Gasket Seal",
+        "material_type": "ROH",
+        "quantity": 1.0,
+        "uom": "EA",
+        "item_category": "L",
+        "component_scrap_pct": 1.0,
+        "backflush": true,
+        "storage_location": "101C"
+      },
+      {
+        "item_number": "0070",
+        "material_number": "HL-SCR-701",
+        "description": "Torx T20 Self-Tapping Fastener M4x16 Zinc Plated",
+        "material_type": "ROH",
+        "quantity": 6.0,
+        "uom": "EA",
+        "item_category": "L",
+        "component_scrap_pct": 1.0,
+        "backflush": true,
+        "storage_location": "101C"
+      },
+      {
+        "item_number": "0080",
+        "material_number": "HL-PKG-801",
+        "description": "Static-Shield Corrugated Shipping Carton & Foam Inserts",
+        "material_type": "VERP",
+        "quantity": 1.0,
+        "uom": "EA",
+        "item_category": "L",
+        "component_scrap_pct": 0.0,
+        "backflush": true,
+        "storage_location": "101D"
+      }
+    ]
+  },
+  "work_centers": [
+    {
+      "work_center": "WC-ASSY-01",
+      "plant": "1010",
+      "work_center_category": "0001",
+      "description": "Housing & Harness Mechanical Sub-Assembly Cell",
+      "cost_center": "CC-PROD-101",
+      "standard_value_key": "SAP1",
+      "capacity_category": "001",
+      "available_capacity_hours_day": 16.0,
+      "efficiency_rate_pct": 95
+    },
+    {
+      "work_center": "WC-OPT-02",
+      "plant": "1010",
+      "work_center_category": "0001",
+      "description": "Precision Optical Alignment & Driver Mounting",
+      "cost_center": "CC-PROD-101",
+      "standard_value_key": "SAP1",
+      "capacity_category": "001",
+      "available_capacity_hours_day": 16.0,
+      "efficiency_rate_pct": 92
+    },
+    {
+      "work_center": "WC-GLUE-03",
+      "plant": "1010",
+      "work_center_category": "0001",
+      "description": "Robotic Automated Adhesive Dispensing Station",
+      "cost_center": "CC-PROD-102",
+      "standard_value_key": "SAP1",
+      "capacity_category": "002",
+      "available_capacity_hours_day": 16.0,
+      "efficiency_rate_pct": 98
+    },
+    {
+      "work_center": "WC-CURE-04",
+      "plant": "1010",
+      "work_center_category": "0001",
+      "description": "Ultrasonic Clamping & Thermal Curing Tunnel",
+      "cost_center": "CC-PROD-102",
+      "standard_value_key": "SAP1",
+      "capacity_category": "002",
+      "available_capacity_hours_day": 16.0,
+      "efficiency_rate_pct": 95
+    },
+    {
+      "work_center": "WC-TST-05",
+      "plant": "1010",
+      "work_center_category": "0001",
+      "description": "In-Process Photometric & Beam Pattern Test Darkroom",
+      "cost_center": "CC-QUAL-201",
+      "standard_value_key": "SAP1",
+      "capacity_category": "001",
+      "available_capacity_hours_day": 16.0,
+      "efficiency_rate_pct": 90
+    },
+    {
+      "work_center": "WC-LEAK-06",
+      "plant": "1010",
+      "work_center_category": "0001",
+      "description": "Helium Sniffing & Moisture Ingress Pressure Chamber",
+      "cost_center": "CC-QUAL-201",
+      "standard_value_key": "SAP1",
+      "capacity_category": "001",
+      "available_capacity_hours_day": 16.0,
+      "efficiency_rate_pct": 92
+    },
+    {
+      "work_center": "WC-PKG-07",
+      "plant": "1010",
+      "work_center_category": "0001",
+      "description": "Protective Film Applicator & Final Barcode Packaging",
+      "cost_center": "CC-PROD-103",
+      "standard_value_key": "SAP1",
+      "capacity_category": "001",
+      "available_capacity_hours_day": 16.0,
+      "efficiency_rate_pct": 96
+    }
+  ],
+  "routing": {
+    "material_number": "HL-200X",
+    "plant": "1010",
+    "routing_group": "50001201",
+    "group_counter": "01",
+    "description": "Assembly Routing - Bi-LED Headlamp Assembly",
+    "base_quantity": 100,
+    "base_uom": "EA",
+    "operations": [
+      {
+        "operation_number": "0010",
+        "work_center": "WC-ASSY-01",
+        "control_key": "PP01",
+        "description": "Housing prep, grommet insertion, and wiring harness routing",
+        "setup_time_min": 15.0,
+        "machine_time_min": 0.0,
+        "labor_time_min": 120.0
+      },
+      {
+        "operation_number": "0020",
+        "work_center": "WC-OPT-02",
+        "control_key": "PP01",
+        "description": "Optical module installation and driver heat sink mounting",
+        "setup_time_min": 20.0,
+        "machine_time_min": 30.0,
+        "labor_time_min": 150.0
+      },
+      {
+        "operation_number": "0030",
+        "work_center": "WC-GLUE-03",
+        "control_key": "PP01",
+        "description": "Robotic perimeter sealant bead dispensing (PUR adhesive)",
+        "setup_time_min": 25.0,
+        "machine_time_min": 45.0,
+        "labor_time_min": 15.0
+      },
+      {
+        "operation_number": "0040",
+        "work_center": "WC-CURE-04",
+        "control_key": "PP01",
+        "description": "Polycarbonate outer lens mating and thermal cure tunnel",
+        "setup_time_min": 10.0,
+        "machine_time_min": 90.0,
+        "labor_time_min": 30.0
+      },
+      {
+        "operation_number": "0050",
+        "work_center": "WC-TST-05",
+        "control_key": "QM01",
+        "description": "Automated photometric lux, cutoff line, & lux pattern test",
+        "setup_time_min": 15.0,
+        "machine_time_min": 60.0,
+        "labor_time_min": 60.0
+      },
+      {
+        "operation_number": "0060",
+        "work_center": "WC-LEAK-06",
+        "control_key": "QM01",
+        "description": "Differential pressure decay air leak & moisture hermetic test",
+        "setup_time_min": 10.0,
+        "machine_time_min": 40.0,
+        "labor_time_min": 20.0
+      },
+      {
+        "operation_number": "0070",
+        "work_center": "WC-PKG-07",
+        "control_key": "PP01",
+        "description": "Peelable film application, barcode serialization, packaging",
+        "setup_time_min": 10.0,
+        "machine_time_min": 0.0,
+        "labor_time_min": 50.0
+      }
+    ]
+  },
+  "defect_catalog": [
+    { "code": "DEF-OPT-01", "name": "Photometric Intensity Below Spec (< 28,000 cd)", "category": "Photometric", "frequency_pct": 34.2, "criticality": "Critical" },
+    { "code": "DEF-SEAL-02", "name": "Sealant Bead Void / Continuous Gap Defect", "category": "Mechanical Sealing", "frequency_pct": 26.5, "criticality": "Critical" },
+    { "code": "DEF-FOG-03", "name": "Polycarbonate Inner Lens Fogging / Moisture Ingress", "category": "Environmental", "frequency_pct": 18.7, "criticality": "Major" },
+    { "code": "DEF-HAR-04", "name": "Wiring Harness Terminal Pin Disengagement / High Resistance", "category": "Electrical", "frequency_pct": 11.4, "criticality": "Major" },
+    { "code": "DEF-SCR-05", "name": "Fastener Stripping / Over-Torque Boss Fracture", "category": "Assembly", "frequency_pct": 5.8, "criticality": "Minor" },
+    { "code": "DEF-VIS-06", "name": "Cosmetic Scratch / Anti-Fog Coating Blemish", "category": "Cosmetic", "frequency_pct": 3.4, "criticality": "Minor" }
+  ]
+}

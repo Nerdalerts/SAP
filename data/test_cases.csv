@@ -1,0 +1,26 @@
+Test_Case_ID,Category,Scenario_ID,Linked_Story_ID,Linked_FRD_ID,Test_Title,Target_TCode_App,Status,Pass_Fail_Criteria
+TC-MD-001,Master Data,SC-01,US-MD-001,FR-PP-001,Material Master Creation & View Validation,MM01,Passed,All views saved with zero validation errors
+TC-MD-002,Master Data,SC-01,US-MD-002,FR-PP-006,Multi-Level BOM Creation & Recursion Prevention,CS01,Passed,Recursive entry blocked; valid BOM committed
+TC-MD-003,Costing,SC-01,US-MD-003,FR-PP-008,Standard Cost Estimate Rollup & Price Release,CK11N / CK24,Passed,Standard price updated in MBEW accounting view
+TC-WC-001,PP Master Data,SC-02,US-WC-001,FR-PP-001,Work Center Creation & Capacity Maintenance,CR01,Passed,Capacity and costing formulas link without syntax warnings
+TC-WC-002,PP Master Data,SC-02,US-WC-002,FR-PP-007,Assembly Routing Creation & Component Allocation,CA01 / CA02,Passed,Operations saved with valid standard value assignments
+TC-PLN-001,Demand Planning,SC-03,US-PLN-001,FR-PP-001,Planned Independent Requirements Maintenance,MD61,Passed,Forecast quantities visible in MRP demand horizon
+TC-PLN-002,MRP Live,SC-03,US-PLN-002,FR-PP-002,In-Memory MRP Live Execution & Shortage Detection,MD01N / MD04,Passed,In-memory calculation completes without fallback
+TC-PLN-003,Planning,SC-03,US-PLN-003,FR-PP-001,Planned Order Conversion to Production Order,CO40,Passed,Production order created with matching BOM and routing
+TC-PP-001,Shop Floor,SC-04,US-PP-001,FR-PP-001,Production Order Creation & Lead-Time Scheduling,CO01,Passed,Scheduling calculates realistic finish timestamps
+TC-PP-002,Inventory Check,SC-04,US-PP-002,FR-PP-002,Dynamic Component ATP Availability Check,CO02,Passed,Status MACM visible in table JEST
+TC-PP-003,Control,SC-04,US-PP-003,FR-PP-003,Order Release Block on Missing Parts,CO02,Passed,Order cannot transition to REL while deficit exists
+TC-PP-004,Logistics,SC-04,US-PP-004,FR-PP-004,Material Staging & Serialized Goods Issue,MIGO,Passed,Table MSEG created with mov 261; serials linked in OBJK
+TC-PP-005,Execution,SC-04,US-PP-005,FR-PP-007,Milestone Operation Confirmation Op 0050,CO11N,Passed,Preceding operations confirmed proportionally
+TC-PP-006,Logistics,SC-04,US-PP-005,FR-PP-006,Automated Backflush of Assembly Consumables,CO11N / CO03,Passed,Goods movement documents exist in table MSEG
+TC-PP-007,Quality,SC-04,US-PP-006,FR-PP-009,Scrap Recording with Mandatory Reason Code,CO11N,Passed,Save blocked until valid reason code entered
+TC-PP-008,Control,SC-04,US-PP-006,FR-PP-010,Scrap Tolerance Threshold (>3%) Supervisor Lockout,CO11N,Passed,Hard authorization gatekeeper prevents unapproved scrap
+TC-PP-009,Execution,SC-04,US-PP-007,FR-PP-007,Final Milestone Confirmation Op 0070,CO11N,Passed,All operations across routing show status CNF
+TC-PP-010,Inventory,SC-04,US-PP-007,FR-PP-011,Automated Finished Goods Receipt Movement 101,CO11N / MMBE,Passed,Order status reflects DLV; stock available in 101A
+TC-PP-011,Exception,SC-04,US-PP-008,FR-PP-012,Postprocessing Failed Goods Movements in COGI,COGI,Passed,Failed movement cleared from queue with zero errors
+TC-PP-012,Financial,SC-04,US-PP-001,FR-PP-015,Production Order Technical Completion (TECO),CO02,Passed,Status TECO active; order locked against goods movements
+TC-QM-001,Quality,SC-05,US-QM-001,FR-PP-013,In-Process QM Lot 03 Generation & Results Recording,QE51N,Passed,Measured value recorded; lot valuation compliant
+TC-QM-002,Quality,SC-05,US-QM-002,FR-PP-009,Defect Recording & Quality Notification Creation,QE51N / F2929,Passed,Defect notification created with link to order
+TC-QM-003,Quality,SC-05,US-QM-002,FR-PP-013,Usage Decision Rejection & Stock Transfer to Blocked,QA11,Passed,Units quarantined in 101Q; mov 350 committed
+TC-ECM-001,Change Mgmt,SC-06,US-ECM-001,FR-PP-014,Engineering Change Master & BOM Validity Cutover,CC01 / CS02,Passed,Validity dates segmented correctly without overwrite
+TC-INT-001,Integration,SC-07,US-INT-001,FR-PP-001,PLM EBOM-to-MBOM Automated Interface & AIF Exception,/AIF/ERR,Passed,"Payload ingested, consumables injected, error cleared"

@@ -1,0 +1,58 @@
+Object_Type,Field_ID,Source_Field,Target_Table,Target_Field,Description,Data_Type,Transformation_Rule,Mandatory,Validation_Rule
+Material,M01,Legacy_Part_No,MARA,MATNR,Material Number,CHAR(40),Remove whitespace; uppercase,M,Unique in MARA; max 40 chars
+Material,M02,Item_Class,MARA,MTART,Material Type,CHAR(4),Map Finished->FERT Assembly->HALB Raw->ROH,M,Must exist in T134
+Material,M03,Industry_Type,MARA,MBRSH,Industry Sector,CHAR(1),Default M (Mechanical Engineering),M,Must exist in T137
+Material,M04,Part_Description,MAKT,MAKTX,Material Description,CHAR(40),Direct copy; max 40 chars; lang EN,M,Non-blank
+Material,M05,UOM,MARA,MEINS,Base Unit of Measure,UNIT(3),ISO standard mapping (EA ST KG),M,Must exist in T006
+Material,M06,Net_Weight_g,MARA,NTGEW,Net Weight,QUAN(13.3),Divide grams by 1000,O,Weight >= 0
+Material,M07,Plant_Code,MARC,WERKS,Plant,CHAR(4),Map to 1010,M,Must exist in T001W
+Material,M08,Default_Loc,MARD,LGORT,Storage Location,CHAR(4),Map 101A 101B 101C 101D,M,Must exist in T001L under Plant 1010
+Material,M09,MRP_Method,MARC,DISMM,MRP Type,CHAR(2),Set PD for FERT/HALB/ROH,M,Must exist in T438A
+Material,M10,Planner_ID,MARC,DISPO,MRP Controller,CHAR(3),Set P01,M,Must exist in T024D for Plant 1010
+Material,M11,Lot_Size_Type,MARC,DISLS,Lot Sizing Procedure,CHAR(2),Set EX (Lot-for-lot),M,Must exist in T439A
+Material,M12,Make_Buy_Code,MARC,BESKZ,Procurement Type,CHAR(1),Set E for inhouse F for external,M,Must be E F or X
+Material,M13,Prod_Sched_Prof,MARC,SFGRP,Production Scheduling Profile,CHAR(6),Set PP0001,M,Must exist in TCO43
+Material,M14,Backflush_Flag,MARC,RGEKZ,Backflush Indicator,CHAR(1),Set 1 for consumables blank for serial,O,Must be 1 2 or blank
+Material,M15,Valuation_Class,MBEW,BKLAS,Valuation Class,CHAR(4),FERT 7920 HALB 7900 ROH 3000 VERP 3050,M,Must exist in T025
+Material,M16,Price_Control,MBEW,VPRSV,Price Control,CHAR(1),S for FERT/HALB V for ROH,M,Must be S or V
+Material,M17,Standard_Cost,MBEW,STPRS,Standard Price,CURR(11.2),Set initial price in INR,M,Must be > 0.00
+BOM,B01,Parent_Part_No,MAST,MATNR,Parent Material Number,CHAR(40),Target S/4HANA material number,M,Must exist in MARC Plant 1010
+BOM,B02,Plant_Code,MAST,WERKS,Plant,CHAR(4),Constant 1010,M,Must match Plant 1010
+BOM,B03,BOM_Usage,MAST,STLAN,BOM Usage,CHAR(1),Constant 1 (Production),M,Must exist in T416
+BOM,B04,BOM_Base_Qty,STKO,BMENG,Base Quantity,QUAN(13.3),Set 1.000 for EA,M,Must be > 0
+BOM,B05,BOM_Base_UOM,STKO,BMEIN,Base Unit of Measure,UNIT(3),Inherit from parent Base UOM,M,Must match MARA-MEINS
+BOM,B06,BOM_Status,STKO,STLST,BOM Status,NUMC(2),Set 01 (Active),M,Must exist in T415S
+BOM,B07,Valid_From_Date,STKO,DATUV,Valid-From Date,DATS(8),YYYYMMDD format,M,Valid calendar date
+BOM,B08,Line_Item_No,STPO,POSNR,BOM Item Number,CHAR(4),Auto-increment 0010 0020 ...,M,Unique per BOM header
+BOM,B09,Item_Category,STPO,POSTP,Item Category,CHAR(1),Set L (Stock item),M,Must exist in T418
+BOM,B10,Child_Part_No,STPO,IDNRK,Component Material,CHAR(40),Target child material number,M,Must exist in MARC Plant 1010
+BOM,B11,Component_Qty,STPO,MENGE,Component Quantity,QUAN(13.3),Direct decimal quantity,M,Must be > 0
+BOM,B12,Component_UOM,STPO,MEINS,Component Unit,UNIT(3),Match child Base UOM,M,Must match child MARA-MEINS
+BOM,B13,Scrap_Percentage,STPO,KAUSF,Component Scrap %,DEC(5.2),Direct percentage,O,Between 0.00 and 99.99
+BOM,B14,Issue_Location,STPO,LGORT,Issue Storage Location,CHAR(4),Map 101B 101C 101D,O,Must exist in T001L
+WorkCenter,W01,Work_Cell_ID,CRHD,ARBPL,Work Center Name,CHAR(8),Format WC-XXXX-NN,M,Unique in Plant 1010
+WorkCenter,W02,Plant_Code,CRHD,WERKS,Plant,CHAR(4),Constant 1010,M,Must exist in T001W
+WorkCenter,W03,Work_Center_Cat,CRHD,VERWE,Work Center Category,CHAR(4),Set 0001 (Machine),M,Must exist in TC21
+WorkCenter,W04,Cell_Name,CRTX,KTEXT,Work Center Description,CHAR(40),Descriptive station name,M,Non-blank
+WorkCenter,W05,Std_Value_Key,CRHD,VGWTS,Standard Value Key,CHAR(4),Set SAP1,M,Must exist in TC25
+WorkCenter,W06,Cap_Category,KAKO,KAPAR,Capacity Category,CHAR(3),Set 001 Machine or 002 Labor,M,Must exist in TC27
+WorkCenter,W07,Shift_Hours_Day,KAKO,BEGZT,Operating Shift Time,TIME(6),2 shifts 06:00 to 22:00,M,End > Start
+WorkCenter,W08,Capacity_Factor,KAKO,NUTZZ,Rate of Capacity Util,NUMC(3),Set 90 to 95 percent,M,Between 50 and 100
+WorkCenter,W09,Cost_Center,CRCO,KOSTL,Cost Center,CHAR(10),CC-PROD-101 CC-PROD-102 CC-QUAL-201,M,Must exist in CSKS
+WorkCenter,W10,Setup_Act_Type,CRCO,LSTAR1,Setup Activity Type,CHAR(6),Set SET,M,Must exist in CSLA
+WorkCenter,W11,Mach_Act_Type,CRCO,LSTAR2,Machine Activity Type,CHAR(6),Set MAC,M,Must exist in CSLA
+WorkCenter,W12,Lab_Act_Type,CRCO,LSTAR3,Labor Activity Type,CHAR(6),Set LAB,M,Must exist in CSLA
+Routing,R01,Finished_Part_No,MAPL,MATNR,Material Number,CHAR(40),Target material HL-200X,M,Must exist in MARC Plant 1010
+Routing,R02,Plant_Code,MAPL,WERKS,Plant,CHAR(4),Constant 1010,M,Must exist in T001W
+Routing,R03,Routing_Group,PLKO,PLNNR,Task List Group,CHAR(8),Auto-numbered (50001201),M,Unique in PLKO
+Routing,R04,Group_Counter,PLKO,PLNAL,Group Counter,CHAR(2),Constant 01,M,Format 01
+Routing,R05,Routing_Usage,PLKO,VERWE,Task List Usage,CHAR(3),Set 1 (Production),M,Must exist in T411
+Routing,R06,Routing_Status,PLKO,STATU,Status,CHAR(3),Set 4 (Released),M,Must exist in T412
+Routing,R07,Base_Batch_Qty,PLKO,BMSCH,Base Quantity,QUAN(13.3),Set 100.000 EA,M,Must be > 0
+Routing,R08,Op_Seq_No,PLPO,VORNR,Operation Number,CHAR(4),0010 0020 0030 0040 0050 0060 0070,M,4-digit sequence
+Routing,R09,Station_ID,PLPO,ARBID,Work Center ID,NUMC(8),Internal ID lookup,M,Must resolve in CRHD
+Routing,R10,Control_Code,PLPO,STEUS,Control Key,CHAR(4),PP01 for standard QM01 for inspect,M,Must exist in T430
+Routing,R11,Op_Description,PLPO,LTXA1,Operation Short Text,CHAR(40),Descriptive text,M,Non-blank
+Routing,R12,Setup_Time_Min,AFVV,VGW01,Standard Value 1 Setup,QUAN(9.3),Setup minutes per base batch,M,Must be >= 0
+Routing,R13,Machine_Time_Min,AFVV,VGW02,Standard Value 2 Machine,QUAN(9.3),Machine minutes per base batch,M,Must be >= 0
+Routing,R14,Labor_Time_Min,AFVV,VGW03,Standard Value 3 Labor,QUAN(9.3),Labor minutes per base batch,M,Must be >= 0
