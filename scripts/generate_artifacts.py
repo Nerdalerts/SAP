@@ -486,5 +486,18 @@ def generate_pdf():
     print("PDF generated successfully!")
 
 if __name__ == "__main__":
+    from generate_figures import make_fig1, make_fig2, make_fig3, make_fig4
+    from generate_curated_pdf import build_pdf
+    
+    print("1. Generating figures...")
+    make_fig1()
+    make_fig2()
+    make_fig3()
+    make_fig4()
+    
+    print("2. Generating Excel workbook...")
     generate_excel()
-    generate_pdf()
+    
+    print("3. Generating curated PDF...")
+    build_pdf()
+    print("All artifacts generated successfully!")
