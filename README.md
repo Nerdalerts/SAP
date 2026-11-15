@@ -16,7 +16,6 @@
 
 ## 1. Problem Statement & Portfolio Objective
 
-Hiring managers and screening teams evaluating candidates for SAP Manufacturing (PP / QM / PLM) functional consulting positions look for tangible proof of core consulting deliverables:
 - Business process mapping (**As-Is** vs. **To-Be**).
 - Authoring **Business Scenario Documents (BSDs)** and **Functional Requirements Documents (FRDs)**.
 - Writing granular **Agile User Stories** with formal *Given/When/Then* acceptance criteria.
